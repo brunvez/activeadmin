@@ -27,8 +27,7 @@ module ActiveAdmin
         :filtering,
         :scoping,
         :includes,
-        :pagination,
-        :collection_decorator
+        :pagination
       ].freeze
 
       # Retrieve, memoize and authorize the current collection from the db. This

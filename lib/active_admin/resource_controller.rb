@@ -26,6 +26,8 @@ module ActiveAdmin
     include ViewHelpers::DownloadFormatLinksHelper
     extend ResourceClassMethods
 
+    helper_method :apply_collection_decorator
+
     def self.active_admin_config=(config)
       if @active_admin_config = config
         defaults resource_class: config.resource_class,

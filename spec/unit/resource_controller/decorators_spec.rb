@@ -8,9 +8,18 @@ RSpec.describe ActiveAdmin::ResourceController::Decorators do
 
     context "in show action" do
       let(:action) { 'show' }
-      let(:decorator_class) { PostDecorator }
 
-      it { is_expected.to be_kind_of(PostDecorator) }
+      context 'with a Draper decorator' do
+        let(:decorator_class) { PostDecorator }
+
+        it { is_expected.to be_kind_of(PostDecorator) }
+      end
+
+      context 'with a PORO decorator' do
+        let(:decorator_class) { PostPoroDecorator }
+
+        it { is_expected.to be_kind_of(PostPoroDecorator) }
+      end
     end
 
     context "in update action" do
@@ -54,8 +63,15 @@ RSpec.describe ActiveAdmin::ResourceController::Decorators do
     end
 
     context 'when the form is configured to decorate' do
-      let(:decorator_class) { PostDecorator }
-      it { is_expected.to be_kind_of(PostDecorator) }
+      context 'with a Draper decorator' do
+        let(:decorator_class) { PostDecorator }
+        it { is_expected.to be_kind_of(PostDecorator) }
+      end
+
+      context 'with a PORO decorator' do
+        let(:decorator_class) { PostPoroDecorator }
+        it { is_expected.to be_kind_of(PostPoroDecorator) }
+      end
     end
   end
 end
