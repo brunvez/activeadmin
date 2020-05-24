@@ -137,7 +137,7 @@ module ActiveAdmin
                                            per_page: per_page,
                                            pagination_total: pagination_total) do
             div class: 'index_content' do
-              insert_tag(renderer_class, config, collection)
+              insert_tag(renderer_class, config, apply_collection_decorator(collection))
             end
           end
         end
